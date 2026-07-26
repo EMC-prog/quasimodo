@@ -55,7 +55,8 @@ int main(){
     }
     std::string cont;
     int counter = 0;
-    while (std::cin >> cont and counter < content.size()){
+    std::getline(std::cin, cont); //Skips the year in the first line
+    while (std::getline(std::cin, cont) and counter < content.size()){
         content[counter] = cont;
         counter++;
     }
