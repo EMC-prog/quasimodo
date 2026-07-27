@@ -46,7 +46,7 @@ void checkDate(int& day, int& month, int year){
 
 int main(){
     //Data load
-    std::cout << "Loading files..." << std::endl;
+    std::cout << "Loading content..." << std::endl;
     int year;
     std::cin >> year;
     std::vector<std::string> content(365, "");
@@ -61,7 +61,7 @@ int main(){
         counter++;
     }
     // -----
-    std::cout << "Files succesfully loaded." << std::endl;
+    std::cout << "Content succesfully loaded." << std::endl;
     //Data saving
     //Folder creation
     namespace fs = std::filesystem;
@@ -76,11 +76,14 @@ int main(){
     int vectori = 0;
     while (vectori < content.size()){
         std::string path = "./" + std::to_string(year) + "/" + std::to_string(month) + "/" + std::to_string(day) + ".html";
+        
+        std::string html = R"(<meta name="viewport" content="width=device-width, initial-scale=1.0"> <h1 style="text-align: center;">Today's daily content</h1> <p style="text-align: center; font-size: x-large;">)" + content[vectori] + R"(</p>)";
+        
         // Create and open a text file
         std::ofstream EditingFile(path);
 
         // Write to the file
-        EditingFile << "<meta name=" << '"' << "viewport" << '"' << "content="<< '"' << "width=device-width, initial-scale=1.0" << '"' << "><h1>" << content[vectori] << "</h1>";
+        EditingFile << html;
 
         // Close the file
         EditingFile.close();
