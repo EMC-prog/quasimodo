@@ -62,6 +62,13 @@ This repository also includes a `today.html` file containing JavaScript that aut
 
 A demo file is also given for basic testing, called `demo.txt`.
 
+## To-do
+
+Here's a list of features pending to be added to Quasimodo:
+
+- [ ] Proper argument handling (i.e. `-i quotes.txt`)
+- [ ] Custom HTML template import.
+
 ## Program License
 
 This program is released under the MIT license.
